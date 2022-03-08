@@ -1,10 +1,9 @@
 <script>
-
-
-const playerSelection = prompt('Rock, Paper, or Scissors', '');
-console.log(playerSelection);
-const computerSelection = computerPlay();
-console.log(playRound(playerSelection,computerSelection));
+  
+let playerWin = 0;
+let computerWin = 0;
+let score;
+game();
     
 
     function computerPlay(){
@@ -17,12 +16,12 @@ console.log(playRound(playerSelection,computerSelection));
         } else {
             choice = 'Paper';
         }
-        console.log(choice);
         return choice;
     }
 
     function playRound(playerSelection,computerSelection){
         let result;
+
         if(playerSelection == 'Scissors' && computerSelection == 'Scissors'){
             result = 'Tie! you both picked Scissors.';
         } else if (playerSelection == 'Rock' && computerSelection == 'Rock'){
@@ -31,22 +30,51 @@ console.log(playRound(playerSelection,computerSelection));
             result = 'Tie! you both picked Paper.';
         } else if (playerSelection == 'Scissors' && computerSelection == 'Rock'){
             result = 'You Lose! Rock beats Scissors';
+            computerWin++;
         } else if (playerSelection == 'Scissors' && computerSelection == 'Paper'){
             result = 'You Win! Scissors beats Paper';
+            playerWin++;
         } else if (playerSelection == 'Rock' && computerSelection == 'Scissors'){
             result = 'You Win! Rock beats Scissors';
+            playerWin++;
         } else if (playerSelection == 'Rock' && computerSelection == 'Paper'){
             result = 'You Lose! Paper beats Rock';
+            computerWin++;
         } else if (playerSelection == 'Paper' && computerSelection == 'Scissors'){
             result = 'You Lose! Scissors beats Paper';
+            computerWin++;
         } else if (playerSelection == 'Paper' && computerSelection == 'Rock'){
             result = 'You Win! Paper beats Rock';
+            playerWin++;
         } else {
             result = 'Error. Something went wrong';
         }
-
         return result;
     }
+
+
+    function game() {
+        for (let i = 0; i < 5; i++) {
+            const playerSelection = prompt('Rock, Paper, or Scissors', '');
+            const computerSelection = computerPlay();
+            console.log(playRound(playerSelection,computerSelection));
+    }
+
+    if (playerWin > computerWin) {
+                score = 'You Win!';
+            } else if (computerWin > playerWin) {
+                score = 'You Lose!';
+            } else {
+                score = 'Tie game!';
+            }
+            return score;
+        }
+
+
+    console.log('Player: ' + playerWin);
+    console.log('Computer: ' + computerWin);
+    console.log(score);
+
 
 </script>
 
