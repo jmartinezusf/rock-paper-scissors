@@ -1,0 +1,49 @@
+<script>
+
+    function computerPlay(){
+        choice = Math.floor(Math.random()* 3 + 1);
+        
+        if (choice == 1) {
+            choice = 'Scissors';
+        } else if (choice == 2){
+            choice = 'Rock';
+        } else {
+            choice = 'Paper';
+        }
+
+        console.log(choice);
+    }
+
+    function playRound(playerSelection,computerSelection){
+        let outcome;
+        if(playerSelection == 'Scissors' && computerSelection == 'Scissors'){
+            outcome = 'Tie! you both picked Scissors.';
+        } else if (playerSelection == 'Rock' && computerSelection == 'Rock'){
+            outcome = 'Tie! you both picked Rock.';
+        } else if (playerSelection == 'Paper' && computerSelection == 'Paper'){
+            outcome = 'Tie! you both picked Paper.';
+        } else if (playerSelection == 'Scissors' && computerSelection == 'Rock'){
+            outcome = 'You Lose! Rock beats Scissors';
+        } else if (playerSelection == 'Scissors' && computerSelection == 'Paper'){
+            outcome = 'You Win! Scissors beats Paper';
+        } else if (playerSelection == 'Rock' && computerSelection == 'Scissors'){
+            outcome = 'You Win! Rock beats Scissors';
+        } else if (playerSelection == 'Rock' && computerSelection == 'Paper'){
+            outcome = 'You Lose! Paper beats Rock';
+        } else if (playerSelection == 'Paper' && computerSelection == 'Scissors'){
+            outcome = 'You Lose! Scissors beats Paper';
+        } else if (playerSelection == 'Paper' && computerSelection == 'Rock'){
+            outcome = 'You Win! Paper beats Rock';
+        } else {
+            outcome = 'That\'s not the correct input';
+        }
+
+        return outcome;
+    }
+
+    const playerSelection = prompt('Rock, Paper, or Scissors?','');
+    const computerSelection = computerPlay();
+    console.log(playRound(playerSelection,computerSelection));
+    
+</script>
+
