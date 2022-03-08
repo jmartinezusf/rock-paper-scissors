@@ -1,5 +1,5 @@
 <script>
-  
+
 let playerWin = 0;
 let computerWin = 0;
 let score;
@@ -22,29 +22,29 @@ game();
     function playRound(playerSelection,computerSelection){
         let result;
 
-        if(playerSelection == 'Scissors' && computerSelection == 'Scissors'){
+        if(playerSelection == 3 && computerSelection == 'Scissors'){
             result = 'Tie! you both picked Scissors.';
-        } else if (playerSelection == 'Rock' && computerSelection == 'Rock'){
+        } else if (playerSelection == 1 && computerSelection == 'Rock'){
             result = 'Tie! you both picked Rock.';
-        } else if (playerSelection == 'Paper' && computerSelection == 'Paper'){
+        } else if (playerSelection == 2 && computerSelection == 'Paper'){
             result = 'Tie! you both picked Paper.';
-        } else if (playerSelection == 'Scissors' && computerSelection == 'Rock'){
+        } else if (playerSelection == 3 && computerSelection == 'Rock'){
             result = 'You Lose! Rock beats Scissors';
             computerWin++;
-        } else if (playerSelection == 'Scissors' && computerSelection == 'Paper'){
-            result = 'You Win! Scissors beats Paper';
+        } else if (playerSelection == 3 && computerSelection == 'Paper'){
+            result = 'You Won! Scissors beats Paper';
             playerWin++;
-        } else if (playerSelection == 'Rock' && computerSelection == 'Scissors'){
-            result = 'You Win! Rock beats Scissors';
+        } else if (playerSelection == 1 && computerSelection == 'Scissors'){
+            result = 'You Won! Rock beats Scissors';
             playerWin++;
-        } else if (playerSelection == 'Rock' && computerSelection == 'Paper'){
+        } else if (playerSelection == 1 && computerSelection == 'Paper'){
             result = 'You Lose! Paper beats Rock';
             computerWin++;
-        } else if (playerSelection == 'Paper' && computerSelection == 'Scissors'){
+        } else if (playerSelection == 2 && computerSelection == 'Scissors'){
             result = 'You Lose! Scissors beats Paper';
             computerWin++;
-        } else if (playerSelection == 'Paper' && computerSelection == 'Rock'){
-            result = 'You Win! Paper beats Rock';
+        } else if (playerSelection == 2 && computerSelection == 'Rock'){
+            result = 'You Won! Paper beats Rock';
             playerWin++;
         } else {
             result = 'Error. Something went wrong';
@@ -54,26 +54,24 @@ game();
 
 
     function game() {
+
         for (let i = 0; i < 5; i++) {
-            const playerSelection = prompt('Rock, Paper, or Scissors', '');
+            const playerSelection = prompt('Rock [1], Paper [2], or Scissors [3]?', '');
             const computerSelection = computerPlay();
             console.log(playRound(playerSelection,computerSelection));
         }
 
         if (playerWin > computerWin) {
-                score = 'You Win!';
+            score = 'Player Wins!';
         } else if (computerWin > playerWin) {
-                score = 'You Lose!';
+            score = 'Computer Wins!';
         } else {
-                score = 'Tie game!';
+            score = 'It\'s a draw!';
         }
-        return score;
+        console.log('Player: ' + playerWin);
+        console.log('Computer: ' + computerWin);
+        console.log(score);
     }
-
-
-    console.log('Player: ' + playerWin);
-    console.log('Computer: ' + computerWin);
-    console.log(score);
 
 
 </script>
