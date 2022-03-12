@@ -1,78 +1,45 @@
-<script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>Rock, Paper, & Scissors</title>
+</head>
+<body>
+    <section class ='rpc-game'>
 
-let playerWin = 0;
-let computerWin = 0;
-let score;
-game();
-    
+        <div class ='score'>
+            <div class ='player-score'>
+                <h2>Player</h2>
+                <p class ='p-count'>0</p>
+            </div>
+            <div class ='computer-score'>
+                <h2>Computer</h2>
+                <p class ='c-count'>0</p>
+            </div>
+        </div>
 
-    function computerPlay(){
-        choice = Math.floor(Math.random()* 3 + 1);
-        
-        if (choice == 1) {
-            choice = 'Scissors';
-        } else if (choice == 2){
-            choice = 'Rock';
-        } else {
-            choice = 'Paper';
-        }
-        return choice;
-    }
+        <div class="intro">
+            <h1 class="title">Rock Paper and Scissors</h1>
+            <button class='start'>Start Game</button>
+        </div>
 
-    function playRound(playerSelection,computerSelection){
-        let result;
+        <div class="round fadeOut">
+            <h2 class="result">Choose an option</h2>
+            <div class ='options'>
+                <button class ='scissors' value="scissors">Scissors</button>
+                <button class ='rock' value="rock">Rock</button>
+                <button class ='paper' value="paper">Paper</button>
+            </div>
+        </div>
 
-        if(playerSelection == 3 && computerSelection == 'Scissors'){
-            result = 'Tie! you both picked Scissors.';
-        } else if (playerSelection == 1 && computerSelection == 'Rock'){
-            result = 'Tie! you both picked Rock.';
-        } else if (playerSelection == 2 && computerSelection == 'Paper'){
-            result = 'Tie! you both picked Paper.';
-        } else if (playerSelection == 3 && computerSelection == 'Rock'){
-            result = 'You Lose! Rock beats Scissors';
-            computerWin++;
-        } else if (playerSelection == 3 && computerSelection == 'Paper'){
-            result = 'You Won! Scissors beats Paper';
-            playerWin++;
-        } else if (playerSelection == 1 && computerSelection == 'Scissors'){
-            result = 'You Won! Rock beats Scissors';
-            playerWin++;
-        } else if (playerSelection == 1 && computerSelection == 'Paper'){
-            result = 'You Lose! Paper beats Rock';
-            computerWin++;
-        } else if (playerSelection == 2 && computerSelection == 'Scissors'){
-            result = 'You Lose! Scissors beats Paper';
-            computerWin++;
-        } else if (playerSelection == 2 && computerSelection == 'Rock'){
-            result = 'You Won! Paper beats Rock';
-            playerWin++;
-        } else {
-            result = 'Error. Something went wrong';
-        }
-        return result;
-    }
+    </section>
+
+    <script src="./script.js"></script>
+</body>
+</html>
 
 
-    function game() {
-
-        for (let i = 0; i < 5; i++) {
-            const playerSelection = prompt('Rock [1], Paper [2], or Scissors [3]?', '');
-            const computerSelection = computerPlay();
-            console.log(playRound(playerSelection,computerSelection));
-        }
-
-        if (playerWin > computerWin) {
-            score = 'Player Wins!';
-        } else if (computerWin > playerWin) {
-            score = 'Computer Wins!';
-        } else {
-            score = 'It\'s a draw!';
-        }
-        console.log('Player: ' + playerWin);
-        console.log('Computer: ' + computerWin);
-        console.log(score);
-    }
-
-
-</script>
 
