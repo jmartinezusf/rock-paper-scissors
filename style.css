@@ -1,6 +1,21 @@
+body {
+    background-color: #101010;
+}
+
+h2 {
+    margin: 0;
+    padding: 0;
+    color: #fff;
+}
+
+@font-face {
+    font-family: customFont;
+    src: url(./fonts/ART\ HISTORY\ BOOK.otf);
+}
 
 .score{
-    font-family: 'Roboto', sans-serif;
+    font-family: customFont;
+    font-size: 20px;
     display: flex;
     justify-content: space-evenly;
     transition: opacity 0.5s ease;
@@ -10,8 +25,9 @@
 .p-count,
 .c-count {
     text-align: center;
-    font-family: 'Roboto', sans-serif;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     font-size: 2em;
+    color: #fff;
 }
 
 .intro {
@@ -22,15 +38,23 @@
 }
 
 .title {
-    font-family: 'Roboto', sans-serif;
+    font-family: customFont;
     font-size: 2em;
+    color: #fff;
+    font-size: 50px;
 }
 
 .start,
 .restart {
-    padding: 1em 2em;
+    background-color: transparent;
+    border: 2px solid #4ca;
+    padding: 1em 3em;
+    border-radius: 5px;
     cursor: pointer;
     transition: opacity 0.5s ease;
+    color: #fff;
+    font-size: 16px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 .round{
@@ -38,18 +62,26 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 1em;
+    gap: 2em;
     transition: opacity 0.5s ease;
+    width: 500px;
+    margin: auto;
+    padding: 3em;
+    border-radius: 25px;
+    background-color: #181818;
+    box-shadow: rgba(240, 46, 170, 0.4) 0px 5px, rgba(240, 46, 170, 0.3) 0px 10px, rgba(240, 46, 170, 0.2) 0px 15px, rgba(240, 46, 170, 0.1) 0px 20px, rgba(240, 46, 170, 0.05) 0px 25px;
 }
 
 .result {
-    font-family: 'Roboto', sans-serif;
-    font-size: 20px;
+    font-family: customFont;
+    font-size: 25px;
+    color: #fff;
 }
 
 .options {
     display: flex;
     gap: 3em;
+
 }
 
 .scissors,
@@ -57,17 +89,33 @@
 .paper {
     padding: 1em 2em;
     cursor: pointer;
+    background-color: transparent;
+    border: 2px solid #4ca;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 14px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 .reset-container {
+    width: 500px;
+    margin: auto;
+    padding: 3em;
+    border-radius: 25px;
+    background-color: #181818;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 1em;
+    gap: 2em;
+    transition: opacity 0.5s ease;
+    border: none;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
 
 .winner {
-    font-family: 'Roboto', sans-serif;
+    font-family: customFont;
+    color: #fff;
+    font-size: 40px;
 }
 
 div.fadeOut {

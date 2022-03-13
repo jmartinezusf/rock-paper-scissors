@@ -28,11 +28,11 @@ const game = () => {
                 computerSelection = computerPlay();
 
                 updateText(playerSelection.value, computerSelection);
-
                 resetGame();
 
              });
         }); 
+
     };
 
     const updateText = function(playerSelection,computerSelection){
@@ -100,6 +100,7 @@ const game = () => {
     };
 
     const resetGame = () => {
+        console.log(computerScore);
         const resetBtn = document.querySelector('.restart');
         const resetScreen = document.querySelector('.reset-container');
         const winner = document.querySelector('.winner');
@@ -112,26 +113,26 @@ const game = () => {
             cScore.textContent = '0';
             playerScore = 0;
             computerScore = 0;
-            result.textContent = '';
+            console.log(playerScore);
+            console.log(computerScore);
+            result.textContent = 'Choose an option';
         });
 
-        if (playerScore == 5) {
+        if (playerScore === 5) {
             console.log(playerScore);
-            result.textContent = 'Player Wins';
-                resetScreen.classList.add('fadeIn');
-                round.classList.remove('fadeIn');
-                score.classList.remove('fadeIn');
+            resetScreen.classList.add('fadeIn');
+            round.classList.remove('fadeIn');
+            score.classList.remove('fadeIn');
+            winner.textContent = 'Player Wins';
 
         }
 
-        if (computerScore == 5) {
+        if (computerScore === 5) {
             console.log(computerScore);
-            result.textContent = 'Computer Wins';
             resetScreen.classList.add('fadeIn');
             round.classList.remove('fadeIn');
             score.classList.remove('fadeIn');
             winner.textContent = 'Computer Wins'
-
         }
     
     };
