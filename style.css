@@ -3,7 +3,7 @@
     font-family: 'Roboto', sans-serif;
     display: flex;
     justify-content: space-evenly;
-    border: 1px solid red;
+    transition: opacity 0.5s ease;
 }
 
 
@@ -19,8 +19,6 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    border: 1px solid red;
-    transition: opacity 0.5s ease;
 }
 
 .title {
@@ -28,9 +26,11 @@
     font-size: 2em;
 }
 
-.start {
+.start,
+.restart {
     padding: 1em 2em;
     cursor: pointer;
+    transition: opacity 0.5s ease;
 }
 
 .round{
@@ -39,7 +39,6 @@
     flex-direction: column;
     align-items: center;
     gap: 1em;
-    border: 1px solid red;
     transition: opacity 0.5s ease;
 }
 
@@ -58,6 +57,17 @@
 .paper {
     padding: 1em 2em;
     cursor: pointer;
+}
+
+.reset-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1em;
+}
+
+.winner {
+    font-family: 'Roboto', sans-serif;
 }
 
 div.fadeOut {
